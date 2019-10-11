@@ -85,7 +85,7 @@ function App() {
     <th>Result</th>
     <th>Parameters</th>
     </tr>
-    { [0,1,2,3,4,5,6,7,8,9,10,11,12].map(k => {
+    { (new Array(13)).fill(0).map((k, i) => {
       let prev = data.prev()
       let next = data.next()
       let ret = data.set()
