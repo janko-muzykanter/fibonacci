@@ -30,7 +30,6 @@ function fetchObject() {
   let count = -1
   let prev = 0
   let next = 1
-  let temp = 0
 
   return {
     set: i => { 
@@ -40,9 +39,8 @@ function fetchObject() {
       else if (count==1)
         return 1
       else {
-        temp = next
         next = next + prev
-        prev = temp
+        prev = next - prev 
         return next
       }
     },
@@ -56,6 +54,8 @@ function App() {
   let d = 0;
   const data = fetchObject();
   return (
+    <div>
+    <h1>Fibonacci Sequence</h1>
     <div className="App">
     <div>
     <h3>Recurrency</h3>
@@ -78,7 +78,7 @@ function App() {
     </div>
 
     <div> 
-    <h3>two variables</h3>
+    <h3>Two variables</h3>
     <Table>
     <tr>
     <th>Index</th>
@@ -100,6 +100,7 @@ function App() {
     }
     </Table>
 
+    </div>
     </div>
     </div>
   );
